@@ -203,3 +203,26 @@ module.exports = {
     }
 };
 ```
+
+### With dynamic code
+
+```
+module.exports = {
+    '/api/users': {
+        GET: {
+            default: {
+                data: {
+                    success: true
+                },
+                code: function(req) {
+                    if (req.body.sample_parameter) {
+                        return 200;
+                    } else {
+                        return 404;
+                    }
+                }
+            }
+	    }
+    }
+};
+```
