@@ -226,3 +226,22 @@ module.exports = {
     }
 };
 ```
+
+### With raw data (e.g. HTML data)
+
+```
+module.exports = {
+    '/api/users': {
+        GET: {
+            default: {
+                data: "<h1>Hello World!</h1>",
+                raw: true,
+                headers: {
+                    "content-type": "text/html; charset=UTF-8"
+                }
+
+            }
+	    }
+    }
+};
+```
