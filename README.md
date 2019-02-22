@@ -208,7 +208,7 @@ module.exports = {
 
 ```
 module.exports = {
-    '/api/users': {
+    '/api/users/code': {
         GET: {
             default: {
                 data: {
@@ -222,7 +222,7 @@ module.exports = {
                     }
                 }
             }
-	    }
+        }
     }
 };
 ```
@@ -231,7 +231,7 @@ module.exports = {
 
 ```
 module.exports = {
-    '/api/users': {
+    '/api/users/raw': {
         GET: {
             default: {
                 data: "<h1>Hello World!</h1>",
@@ -241,7 +241,38 @@ module.exports = {
                 }
 
             }
-	    }
+	}
+    },
+    '/api/users/raw/file': {
+    GET: {
+      default: {
+        data: function () {
+          let fs = require('fs');
+          let filename = require.resolve('./sample.html');
+          return fs.readFileSync(filename, 'utf-8');
+        },
+        headers: {
+          "content-type": "text/html; charset=UTF-8"
+        },
+        raw: true
+      }
+    }
+  }
+};
+```
+
+### RegExp path
+
+```
+module.exports = {
+    '\/api\/user\/(\d*)': {
+        GET: {
+            data: function(req) {
+                return {
+                    name: "John"
+                }
+            }
+        }
     }
 };
 ```
