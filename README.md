@@ -1,16 +1,14 @@
 RestEmulator
 ===========
 
-[![NPM](https://nodei.co/npm/rest-emulator.png?downloads=true&downloadRank=true)](https://nodei.co/npm/rest-emulator/)
-
 # Installation
 
-    npm install --save rest-emulator
+    npm install --save-dev git+ssh://git@github.com/Eagle94T/rest-emulator
 
 # Links
 
-* [Gulp plugin](https://github.com/temrdm/gulp-rest-emulator)
-* [Standalone node server](https://github.com/Pouja/node-rest-emulator)
+* [Gulp plugin](https://github.com/Eagle94T/gulp-rest-emulator)
+* [Original Rest Emulator](https://github.com/temrdm/rest-emulator)
 
 # Usage
 
